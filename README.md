@@ -24,7 +24,7 @@ rag_project/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/craig-stevenson/rag-simple.git
 cd rag_project
 ```
 

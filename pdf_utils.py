@@ -3,12 +3,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.schema.document import Document
 import warnings
-from typing import List
 import sys
 import os
 import pickle
 
-def get_pages_as_list(pdf_path)->List[str]:
+def get_pages_as_list(pdf_path)->list[str]:
     pages = []
     with warnings.catch_warnings():
         reader = PdfReader(pdf_path, strict=False)
@@ -30,7 +29,7 @@ def get_pages_as_list(pdf_path)->List[str]:
     return pages
 
 def pdf_to_markdown(pdf_path):
-    pages: List[str] = get_pages_as_list(pdf_path)
+    pages: list[str] = get_pages_as_list(pdf_path)
     full_text = ''.join(pages)
     
     # Generate markdown filename: replace .pdf extension with .md
